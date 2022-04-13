@@ -13,26 +13,6 @@ function sleep(ms) {
   return;
 }
 
-// var download = function(uri, folder, user_id, index = 0, callback) {
-//   request.head(uri, function (err, res, body) {
-//     if (err) {
-//       console.log(err);
-//       callback();
-//       return;
-//     }
-//     console.log('status code: ', res.statusCode);
-//     if (res.statusCode >= 400) {
-//       callback();
-//       return;
-//     }
-//     console.log('content-type:', res.headers['content-type']);
-//     console.log('content-length:', res.headers['content-length']);
-
-//     filename = user_id
-//     request(uri).pipe(fs.createWriteStream(filename + '.' + res.headers['content-type'].split('/')[1])).on('close', callback);
-//   });
-// }
-
 var download = function (uri, filename, callback) {
   request.head(uri, function (err, res, body) {
     if (err) {
