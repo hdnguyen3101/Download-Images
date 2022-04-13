@@ -42,7 +42,7 @@ var recursiveDownload = function(data, index) {
   }
   download(currItem.uri, `${baseUrl}/${user_id}/${user_id}_${index}`, function() {
     console.log('done', currItem.uri);
-    sleep(1500); // slepp 1.5 seconds
+    sleep(1500); // sleep 1.5 seconds
     recursiveDownload(data, index + 1);
   });
 }
