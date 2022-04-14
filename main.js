@@ -1,4 +1,3 @@
-
 const { MongoClient } = require('mongodb');
 const fs = require('fs');
 const request = require('request');
@@ -47,12 +46,10 @@ var recursiveDownload = function(data, index) {
   });
 }
 
-
 // Check folder exists
 if (!fs.existsSync(baseUrl)) {
   fs.mkdirSync(baseUrl);
 }
-
 
 MongoClient.connect(dbUrl, function (err, db) {
   if (err) {
@@ -60,7 +57,6 @@ MongoClient.connect(dbUrl, function (err, db) {
   } else {
     //HURRAY!! We are connected. :)
     console.log('Connection established to', dbUrl);
-
 
     db.db('test-api-halo').collection('m200').aggregate([
       {
@@ -88,6 +84,5 @@ MongoClient.connect(dbUrl, function (err, db) {
       //Close connection
       db.close();
     });
-
   }
 });
