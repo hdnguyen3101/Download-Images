@@ -50,7 +50,6 @@ var recursiveDownload = function(data, index) {
 if (!fs.existsSync(baseUrl)) {
   fs.mkdirSync(baseUrl);
 }
-
 MongoClient.connect(dbUrl, function (err, db) {
   if (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
